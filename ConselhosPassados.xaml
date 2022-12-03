@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppConselheiro.View.ConselhosPassados"
+             Title="Conselhos Passados">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Lista de conselhos" 
+                   FontSize="Title" 
+                   HorizontalTextAlignment="Center" 
+                   HorizontalOptions="CenterAndExpand" 
+            />
+
+            <RefreshView x:Name="Atualizando" 
+                         IsRefreshing="True">
+              
+                <ListView x:Name="lista_conselhos">
+                    <ListView.Header>
+                        <Grid RowDefinitions="Auto" 
+                              ColumnDefinitions="0.2*, *">
+                          
+                            <Label Grid.Row="0" 
+                                   Grid.Column="0" 
+                                   Text="ID" 
+                            />
+                          
+                            <Label Grid.Row="0" 
+                                   Grid.Column="1" 
+                                   Text="Frase" 
+                            />
+                        
+                        </Grid>
+                    </ListView.Header>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                              
+                                <Grid RowDefinitions="Auto" 
+                                      ColumnDefinitions="0.2*,*">
+
+                                    <Label Grid.Row="0" 
+                                           Grid.Column="0" 
+                                           Text="{Binding Id}" 
+                                    />
+                                  
+                                    <Label Grid.Row="0" 
+                                           Grid.Column="1" 
+                                           Text="{Binding Frase}" 
+                                    />
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

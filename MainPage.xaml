@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppConselheiro.MainPage"
+             Title="Conselhos">
+
+    <ContentPage.ToolbarItems>
+     <ToolbarItem Text="Lista de conselhos" 
+                  x:Name="btnLista" 
+                  Clicked="btnLista_Clicked" 
+     />
+      
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Frame>
+          <StackLayout>
+           <Frame>
+              <Label Text="{Binding Frase}" 
+                     x:Name="lbl_conselho"  
+                     FontSize="Large" />
+           </Frame>
+            
+           <StackLayout Orientation="Horizontal">
+              <Button Text="Copiar frase" 
+                      x:Name="btn_CopiarFrase" 
+                      Clicked="btn_CopiarFrase_Clicked" 
+              />
+             
+              <Button Text="Novo conselho" 
+                      x:Name="btn_novoConselho" 
+                      Clicked="btn_novoConselho_Clicked" 
+              />
+             
+           </StackLayout>
+          </StackLayout>
+        </Frame>
+ </StackLayout>
+</ContentPage>
